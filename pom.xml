@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001 XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jacoco</groupId>
+  <artifactId>jacoco-p2-site</artifactId>
+  <packaging>pom</packaging>
+  <version>0.1-SNAPSHOT</version>
+
+  <properties>
+    <jacoco.version>0.7.9-SNAPSHOT</jacoco.version>
+    <asm.version>5.2</asm.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.reficio</groupId>
+        <artifactId>p2-maven-plugin</artifactId>
+        <version>1.1.1</version>
+        <configuration>
+          <artifacts>
+            <artifact><id>org.jacoco:org.jacoco.core:${jacoco.version}</id></artifact>
+            <artifact><id>org.jacoco:org.jacoco.report:${jacoco.version}</id></artifact>
+            <artifact><id>org.jacoco:org.jacoco.agent:${jacoco.version}</id></artifact>
+            <artifact><id>org.ow2.asm:asm:${asm.version}</id></artifact>
+            <artifact><id>org.ow2.asm:asm-commons:${asm.version}</id></artifact>
+            <artifact><id>org.ow2.asm:asm-tree:${asm.version}</id></artifact>
+          </artifacts>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
